@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu PWA Simples</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <h1>Olá, Leandro!</h1>
+  <p>Este é um site simples em HTML que pode virar um PWA.</p>
+  <button onclick="alert('Você clicou no botão!')">Clique aqui</button>
+
+  <script>
+    // Registrar o Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker registrado!'))
+        .catch(err => console.error('Erro ao registrar SW:', err));
+    }
+  </script>
+</body>
+</html>
